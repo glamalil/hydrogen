@@ -1,36 +1,43 @@
 package ph.com.hydrogen.model;
+import java.sql.Date;
 
 public class ItemImpl implements Item {
 
-	private String type;
+	private String itemName;
+	private Date dateRegistered;
+	private Category category;
 	
-	public String desc;
 	
-	
-	ItemImpl (String desc) {
-		this.desc = desc;
+	public String getItemName() {
+		return itemName;
 	}
 	
-	public String getDesc() {
-		return desc;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
 	
-	public String getType() {
-		return type;
-
+	public Date getDateRegistered() {
+		return dateRegistered;
 	}
-
-	public void setType(String type) {
-		this.type = type;
+	
+	public void setDateRegistered(Date dateRegistered) {
+		this.dateRegistered = dateRegistered;
 	}
-
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory (Category category) {
+		this.category = category;
+	}
 
 	@Override
-	public void showItem() { // TODO Auto-generated method stub
-		System.out.println("Type: " + getType());
-		System.out.println("Description: " + getDesc());
-		
+	public void showItem() {
+		// TODO Auto-generated method stub
+		System.out.println("Item Name: " + getItemName());
+		System.out.println("Date Registered: " + dateRegistered);
+		System.out.println("Category: " + getCategory().getCategoryName());
 		
 	}
+	
 
 }

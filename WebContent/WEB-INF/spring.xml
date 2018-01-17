@@ -3,10 +3,12 @@
 <beans>
 	<bean id="electronicAcc" class="ph.com.hydrogen.model.ElectronicAccessories">
 		<property name="type" value="Electronic"></property>
-		<constructor-arg value ="Electronic Description"></constructor-arg>
+		<constructor-arg index="1" value ="10"></constructor-arg>
+		<constructor-arg index="0" value ="Electronic Description"></constructor-arg>
 	</bean>
 	<bean id="electronicDev" class="ph.com.hydrogen.model.ElectronicDevice">
 		<property name="type" value="Electronic"></property>
-		<constructor-arg value ="Electronic Description"></constructor-arg>
+		<constructor-arg index="1" value ="10"></constructor-arg>
+		<constructor-arg index="0" value ="Electronic Description"></constructor-arg>
 	</bean>	
 </beans> 

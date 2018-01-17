@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="electronicAcc" class="ph.com.hydrogen.model.ElectronicAccessories">
+		<property name="type" value="Electronic"></property>
+		<constructor-arg value ="Electronic Description"></constructor-arg>
+	</bean>
+	<bean id="electronicDev" class="ph.com.hydrogen.model.ElectronicDevice">
+		<property name="type" value="Electronic"></property>
+		<constructor-arg value ="Electronic Description"></constructor-arg>
+	</bean>	
+</beans> 

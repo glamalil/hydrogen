@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
-	<bean id="electronicAcc" class="ph.com.hydrogen.model.ElectronicAccessories">
-		<property name="type" value="Electronic"></property>
-		<constructor-arg index="1" value ="10"></constructor-arg>
-		<constructor-arg index="0" value ="Electronic Description"></constructor-arg>
+	<bean id="electronicAcc" class="ph.com.hydrogen.model.CategoryImpl">
+		<constructor-arg value="Electronic Accessory"></constructor-arg>
 	</bean>
-	<bean id="electronicDev" class="ph.com.hydrogen.model.ElectronicDevice">
-		<property name="type" value="Electronic"></property>
-		<constructor-arg index="1" value ="10"></constructor-arg>
-		<constructor-arg index="0" value ="Electronic Description"></constructor-arg>
-	</bean>	
+	<bean id="electronicDev" class="ph.com.hydrogen.model.CategoryImpl">
+		<constructor-arg value="Electronic Device"></constructor-arg>
+	</bean>
+	<bean id="seller" class="ph.com.hydrogen.model.SellerImpl">
+		<property name="name" value="ABC Electronics"></property>
+		<property name="location" value="Eastwood QC"></property>
+		<property name="phone" value="8-MCDO"></property>
+		<property name="gReviews" value="50"></property>
+		<property name="bReviews" value="50"></property>
+		<property name="items">
+			<list>
+				<ref bean="usbCable"></ref>
+				<ref bean="usbCharger"></ref>
+				<ref bean="iPhoneX"></ref>
+			</list>
+		</property>
+	</bean>
+	<bean id="dateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="yyy-MM-dd"></constructor-arg>
+	</bean>
+	<bean id="usbCable" class="ph.com.hydrogen.model.ItemImpl">
+		<property name="itemName"  value="USB Cable"></property>
+		<property name="dateRegistered">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="2018-01-17"></constructor-arg>
+			</bean>
+		</property>
+		<property name="category" ref="electronicAcc"></property>
+	</bean>
+	<bean id="usbCharger" class="ph.com.hydrogen.model.ItemImpl">
+		<property name="itemName" value="USB Charger"></property>
+		<property name="dateRegistered">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="2018-01-17"></constructor-arg>
+			</bean>
+		</property>
+		<property name="category" ref="electronicAcc"></property>
+	</bean>
+	<bean id="iPhoneX" class="ph.com.hydrogen.model.ItemImpl">
+		<property name="itemName" value="iPhoneX"></property>
+		<property name="dateRegistered">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="2018-01-17"></constructor-arg>
+			</bean>
+		</property>
+		<property name="category" ref="electronicDev"></property>
+	</bean>
 </beans> 

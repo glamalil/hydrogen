@@ -4,7 +4,7 @@ public class CategoryImpl implements Category {
 	
 	private String categoryName;
 	
-	CategoryImpl(String CategoryImpl){
+	CategoryImpl(String categoryName){
 		this.categoryName = categoryName;
 	}
 	
